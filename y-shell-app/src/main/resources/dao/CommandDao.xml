@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.biubiu.dao.CommandDao">
+    <!--<resultMap id="CommandId" type="com.biubiu.model.Command">
+
+    </resultMap>-->
+    <select id="selectCommand" resultType="com.biubiu.model.Command">
+        select * from command where  has_delete = '0' order by id;
+    </select>
+
+    <update id="removeCommand">
+        update command set has_delete = '1' where id = #{param1}
+    </update>
+
+    <update id="updateCommand" parameterType="com.biubiu.model.Command">
+        update command set name = #{name} , content = #{content} where id  = #{id}
+    </update>
+</mapper>
+
