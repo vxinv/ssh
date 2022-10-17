@@ -66,7 +66,7 @@
                         const that = this;
                         const formData = that.form;
                         formData.type = "FOLDER";
-                        console.log(JSON.stringify(formData));
+                        //console.log(JSON.stringify(formData));
                         if(formData.id === 0) {
                             formData.parentId = -1;
                             // 新增的时候绑定父节点
@@ -87,7 +87,7 @@
                         } else {
                             // 更新
                             that.$api.put('/ecs', JSON.stringify(formData), (res) => {
-                                console.log(res);
+                                //console.log(res);
                                 if(res !== undefined && res.status !== undefined && res.status === 200) {
                                     this.openLayer('消息', '恭喜你，修改成功。', 'success');
                                     // 关闭弹出层
@@ -99,7 +99,7 @@
                             });
                         }
                     } else {
-                        console.log('error submit!!');
+                        //console.log('error submit!!');
                         return false;
                     }
                 });

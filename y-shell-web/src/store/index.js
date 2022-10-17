@@ -10,7 +10,7 @@ const store = new Vuex.Store({
     },
     mutations: {
         setTheme(state, theme) {
-            console.log("fontsize",theme)
+           // console.log("fontsize",theme)
             state.theme = theme
         },
 

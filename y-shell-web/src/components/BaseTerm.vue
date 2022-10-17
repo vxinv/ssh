@@ -72,7 +72,7 @@ export default {
             this.socket.onsend = this.send;
         },
         open: function () {
-            console.log("socket连接成功");
+            //console.log("socket连接成功");
             // 初始化 终端
             this.initXterm();
             this.socket.onsend(JSON.stringify({type: "connect", data: this.node.id})); //转换为字符串
@@ -86,7 +86,7 @@ export default {
             this.heartbeat()
         },
         error: function () {
-            console.log("连接错误");
+           // console.log("连接错误");
         },
         close: function () {
             this.socket.close();
@@ -120,7 +120,7 @@ export default {
             self.timeoutObj = setInterval( () => {
                 //这里发送一个心跳，后端收到后，返回一个心跳消息，
                 if (self.socket.readyState === 1) {
-                    console.log("发送心跳")
+                    ///console.log("发送心跳")
                     //如果连接正常
                     self.socket.send(JSON.stringify({type: "heartbeat", data: ''}));
                 }
@@ -133,7 +133,7 @@ export default {
         this.init(url);
     },
     destroyed() {
-        console.log("页面destroyed")
+        //console.log("页面destroyed")
         clearInterval(this.timeoutObj)
         this.socket.close(); //离开路由之后断开websocket连接
     },

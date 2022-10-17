@@ -15,6 +15,8 @@
     <description>web版本xshell</description>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
 
@@ -62,7 +64,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
-            <scope>true</scope>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -88,7 +90,7 @@
             <version>24.1-jre</version>
         </dependency>
 
-        <dependency>
+      <!--  <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
             <version>1.8.9</version>
@@ -99,13 +101,18 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.8.9</version>
         </dependency>
-
+-->
         <dependency>
             <groupId>com.jcraft</groupId>
             <artifactId>jsch</artifactId>
             <version>0.1.55</version>
         </dependency>
 
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <version>5.8.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -113,6 +120,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+
             </plugin>
         </plugins>
         <!--使xml文件也可以编译-->
@@ -132,6 +140,7 @@
                     <include>*.html</include>
                 </includes>-->
                 <targetPath>templates/dist</targetPath>
+
             </resource>
         </resources>
     </build>

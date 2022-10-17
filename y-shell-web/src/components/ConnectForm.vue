@@ -140,7 +140,7 @@ export default {
             }
             const config = { host : formData.host, port : formData.port, user : formData.user, password : formData.password, identity : formData.identity, passphrase : formData.passphrase,authMethod: formData.authMethod };
             formData.config = JSON.stringify(config);
-            console.log(formData);
+            //console.log(formData);
             // 新增
             that.$api.post('/ecs', JSON.stringify(formData), (res) => {
               if(res !== undefined && res.status !== undefined && res.status === 200) {
@@ -157,7 +157,7 @@ export default {
             const config = { host : formData.host, port : formData.port, user : formData.user, password : formData.password, identity : formData.identity, passphrase : formData.passphrase,authMethod: formData.authMethod };
             formData.config = JSON.stringify(config);
             that.$api.put('/ecs', JSON.stringify(formData), (res) => {
-              console.log(res);
+              //console.log(res);
               if(res !== undefined && res.status !== undefined && res.status === 200) {
                 this.openLayer('消息', '恭喜你，修改成功。', 'success');
                 // 关闭弹出层
@@ -169,7 +169,7 @@ export default {
             });
           }
         } else {
-          console.log('error submit!!');
+          //console.log('error submit!!');
           return false;
         }
       });
@@ -200,7 +200,7 @@ export default {
 
     },
     beforeUpload(file) {
-      console.log('文件校验');
+      //console.log('文件校验');
       if(this.form.host === null || this.form.host === '' ) {
         this.$message.warning(`请填写连接主机，将根据连接的主机进行文件夹的创建`);
         return false;
